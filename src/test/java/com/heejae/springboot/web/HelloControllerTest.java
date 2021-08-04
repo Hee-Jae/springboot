@@ -1,4 +1,4 @@
-package com.heejae.springboot;
+package com.heejae.springboot.web;
 import com.heejae.springboot.web.HelloController;
 import org.junit.Test;
 import org.junit.runner.RunWith;

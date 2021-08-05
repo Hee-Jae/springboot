@@ -25,5 +25,5 @@ public class User {
 ```
 <details>
  <summary> 출처 </summary>
-- hhttps://www.daleseo.com/lombok-popular-annotations/ <br>
+- https://www.daleseo.com/lombok-popular-annotations/ <br>
 </details>

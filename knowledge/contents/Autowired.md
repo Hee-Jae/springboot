@@ -1,6 +1,6 @@
 ### Autowired는 무엇인가?
 
-필요한 의존 객체의 **타입**에 해당하는 [빈](./BeanContainer.md)을 찾아 주입한다.
+필요한 의존 객체의 **타입**에 해당하는 [빈](BeanContainer.md)을 찾아 주입한다.
 다음과 같은 3가지의 경우에 Autowired를 사용할 수 있다.
 - 생성자
 - setter

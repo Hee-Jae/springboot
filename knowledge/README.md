@@ -21,3 +21,5 @@
 - [스프링의 웹 구조](contents/WebArchitecture.md)
 - [Transactional](contents/Transactional.md)
 - [testRestTemplate](contents/testRestTemplate.md)
+- [springframework.ui.Model](contents/Model.md)
+- [Stream, Map, Collect](contents/StreamMapCollect.md)

@@ -23,3 +23,6 @@
 - [testRestTemplate](contents/testRestTemplate.md)
 - [springframework.ui.Model](contents/Model.md)
 - [Stream, Map, Collect](contents/StreamMapCollect.md)
+- [Map](contents/Map.md)
+- [Optional](contents/Optional.md)
+- [Serialization](contents/Serialization.md)

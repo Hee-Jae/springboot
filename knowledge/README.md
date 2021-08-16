@@ -27,3 +27,4 @@
 - [Optional](contents/Optional.md)
 - [Serialization](contents/Serialization.md)
 - [MockMvc](contents/MockMvc.md)
+- [Lambda](contents/Lambda.md)

@@ -19,6 +19,25 @@ cache:
 # 여기서는 프로젝트 내부에 둔 gradlew 을 통해 clean 과 build 를 수행한다.
 script: "./gradlew clean build"
 
+# deploy 명령어가 실행되기 전에 수행된다.
+# CodeDeploy 는 Jar 파일을 인식하지 못하므로 Jar+기타 설정 파일들을 모아 zip 으로 압축한다.
+before_deploy:
+  - zip -r springboot # 현재 위치의 모든 파일을 springboot.zip 으로 압축한다. 압축파일 이름은 본인 프로젝트의 이름으로 한다.
+  - mkdir -p deploy # Travis CI 가 실행중인 위치에 deploy 라는 디렉토리를 생성한다.
+  - mv springboot.zip deploy/springboot.zip
+
+# S3 로 업로드 혹은 CodeDeploy 로 배포 등 외부 서비스와 연동될 행위들을 선언한다.
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: heejae-freelec-springboot-build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private #zip 파일 접근을 private 으로
+    local_dir: deploy # before_deploy 에서 생성한 디렉토리. 해당 위치의 파일들만 S3 로 전송한다.
+    wait-until-deployed: true
+
 # CI 실행 완료 시 메일로 알람
 notifications:
   email:

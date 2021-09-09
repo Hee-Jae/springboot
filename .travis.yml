@@ -22,7 +22,7 @@ script: "./gradlew clean build"
 # deploy 명령어가 실행되기 전에 수행된다.
 # CodeDeploy 는 Jar 파일을 인식하지 못하므로 Jar+기타 설정 파일들을 모아 zip 으로 압축한다.
 before_deploy:
-  - zip -r springboot # 현재 위치의 모든 파일을 springboot.zip 으로 압축한다. 압축파일 이름은 본인 프로젝트의 이름으로 한다.
+  - zip -r springboot * # 현재 위치의 모든 파일을 springboot.zip 으로 압축한다. 압축파일 이름은 본인 프로젝트의 이름으로 한다.
   - mkdir -p deploy # Travis CI 가 실행중인 위치에 deploy 라는 디렉토리를 생성한다.
   - mv springboot.zip deploy/springboot.zip
 
